@@ -11,7 +11,7 @@
     <classes>
       <class name="Google_Test.NewTest">
       </class>
-      <class name="Google_Page.FirstPage">
+      <class name="Google_Test.google">
       </class>
     </classes>
   </test> <!-- Test -->
