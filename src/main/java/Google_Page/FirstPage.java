@@ -32,6 +32,7 @@ public class FirstPage {
 	@AfterMethod(groups = {"smoke"})
 	public void close(){
 		driver.quit();
+		//*over
 	}
 
 }
