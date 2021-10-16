@@ -9,9 +9,11 @@
 </run>
 </groups>
     <classes>
+      <class name="Google_Test.google">
+      </class>
       <class name="Google_Test.NewTest">
       </class>
-      <class name="Google_Test.google">
+      <class name = "Google_Test.other_test">
       </class>
     </classes>
   </test> <!-- Test -->
