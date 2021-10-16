@@ -1,35 +1,48 @@
 package Google_Test;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-public class googleTest{
+import Google_Page.AdactinhomepagePOM;
+import Google_Page.CommonMethods;
+
+public class googleTest {
+	FirstPage Fp = new FirstPage();
+	WebDriver driver ;
+	CommonMethods cm ;
+	AdactinhomepagePOM Ap; 
 	
-	public static WebDriver driver;
-	
-	@BeforeMethod(groups = {"smoke"})
+	@BeforeSuite
 	public void setup() {
-		
-		System.setProperty("Webdriver.Chrome.Driver","C:\\Users\\91994\\eclipse-workspace\\Nunit_Selenium");
-		driver = new ChromeDriver();
+ 	driver = Fp.initializedriver();
+	Ap = new AdactinhomepagePOM(driver);
+	cm = new CommonMethods(driver);
+	cm.get("http://automationpractice.com/index.php");
 	}
 	
-	@Test(groups = {"smoke"},priority = -2)
-	public void test() {
-		driver.get("https://www.google.com/");
-	}
-	@Test(priority = -5,groups = {"smoke"})
-	public void testsuccess() {
-		System.out.println("victory");
+	@Test(priority = 0)
+	public void launchwebsite() throws InterruptedException {
+		 
+		WebDriverWait wait = new WebDriverWait(driver,5);
+		wait.until(ExpectedConditions.elementToBeClickable(Ap.contactus));
+		Assert.assertTrue(Ap.contactus.isDisplayed());	
+		Ap.searchbar.sendKeys("hello");
+		Thread.sleep(3000);
 	}
 	
-	@AfterMethod(groups = {"smoke"})
-	public void close(){
+	@AfterSuite
+	public void teardown() {
 		driver.quit();
-		//*over
 	}
 
 }

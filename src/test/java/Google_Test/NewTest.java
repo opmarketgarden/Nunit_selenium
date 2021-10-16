@@ -10,19 +10,8 @@ import java.util.PriorityQueue;
 
 public class NewTest {
 	
-  @Test(groups = {"smoke"})
-  public void googlelaunch() {
-	  System.out.println("hi");
-  }
   
-  @Test(groups = {"smoke"})
-  public void launch() {
-	  System.out.println("hi1");
-  }
   
-  @Test(groups = {"smoke"})
-  public void launch2() {
-	 WebDriver driver = new ChromeDriver();
-	 driver.get("https://google.com");
-  }
-}
+ 
+  
+ }

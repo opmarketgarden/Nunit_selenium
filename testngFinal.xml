@@ -3,17 +3,12 @@
 <suite name="Suite">
 
   <test thread-count="0" name="Test">
-  <groups>
-<run>
-<include name = "smoke"/>
-</run>
-</groups>
     <classes>
-      <class name="Google_Test.google">
+      <class name="Google_Test.googleTest">
       </class>
       <class name="Google_Test.NewTest">
       </class>
-      <class name = "Google_Test.other_test">
+      <class name = "Google_Test.otherTest">
       </class>
     </classes>
   </test> <!-- Test -->

@@ -2,17 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
-    <groups>
-      <run>
-        <include name="smoke"/>
-      </run>
-    </groups>
     <classes>
-      <class name="Google_Page.FirstPage">
+      <class name="Google_Test.googleTest">
         <methods>
           <include name="test"/>
+          <include name="close"/>
+          <include name="testsuccess"/>
         </methods>
-      </class> <!-- Google_Page.FirstPage -->
+      </class> <!-- Google_Test.googleTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
