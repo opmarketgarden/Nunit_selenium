@@ -21,5 +21,6 @@ public class CommonMethods {
 	public void click(WebElement element) {
 		element.click();
 	}
-
+    
+	
 }

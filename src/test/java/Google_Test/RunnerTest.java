@@ -14,33 +14,25 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import Google_Page.AdactinhomepagePOM;
+import POM.*;
 import Google_Page.CommonMethods;
+import POM.AutomationPractisehomepagePOM;
 
-public class googleTest {
+public class RunnerTest {
 	FirstPage Fp = new FirstPage();
 	WebDriver driver ;
 	CommonMethods cm ;
-	AdactinhomepagePOM Ap; 
+	AutomationPractisehomepagePOM Ap; 
 	
 	@BeforeSuite
 	public void setup() {
  	driver = Fp.initializedriver();
-	Ap = new AdactinhomepagePOM(driver);
+	Ap = new AutomationPractisehomepagePOM(driver);
 	cm = new CommonMethods(driver);
 	cm.get("http://automationpractice.com/index.php");
 	}
 	
-	@Test(priority = 0)
-	public void launchwebsite() throws InterruptedException {
-		
-		WebDriverWait wait = new WebDriverWait(driver,5);
-		wait.until(ExpectedConditions.elementToBeClickable(Ap.contactus));
-		Assert.assertTrue(Ap.contactus.isDisplayed());	
-		wait.until(ExpectedConditions.elementToBeClickable(Ap.searchbar));
-		Ap.searchbar.sendKeys("hello");
-		Thread.sleep(3000);
-	}
+	
 	
 	@AfterSuite
 	public void teardown() {

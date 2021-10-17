@@ -1,4 +1,4 @@
-package Google_Page;
+package POM;
 
 import java.security.PublicKey;
 
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import Google_Test.FirstPage;
 
-public class AdactinhomepagePOM {
+public class AutomationPractisehomepagePOM {
 	
 	WebDriver driver;
     FirstPage p = new FirstPage();
@@ -21,7 +21,13 @@ public class AdactinhomepagePOM {
 	@FindBy(how = How.XPATH,using = "//*[contains(text(),'Contact us')]")
 	public WebElement contactus;
 	
-	public AdactinhomepagePOM(WebDriver driver) {
+	@FindBy(how = How.XPATH,using = "//*[contains(text(),'Women')]")
+	public WebElement womenTab;
+	
+	
+	
+	
+	public AutomationPractisehomepagePOM (WebDriver driver) {
 		
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
