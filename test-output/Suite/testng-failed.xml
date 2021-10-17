@@ -5,9 +5,9 @@
     <classes>
       <class name="Google_Test.googleTest">
         <methods>
-          <include name="test"/>
-          <include name="close"/>
-          <include name="testsuccess"/>
+          <include name="launchwebsite"/>
+          <include name="teardown"/>
+          <include name="setup"/>
         </methods>
       </class> <!-- Google_Test.googleTest -->
     </classes>

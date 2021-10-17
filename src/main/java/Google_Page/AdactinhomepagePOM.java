@@ -26,4 +26,5 @@ public class AdactinhomepagePOM {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
+
 }

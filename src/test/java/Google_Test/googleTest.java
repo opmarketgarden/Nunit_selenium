@@ -4,6 +4,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.html5.AddApplicationCache;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -32,10 +33,11 @@ public class googleTest {
 	
 	@Test(priority = 0)
 	public void launchwebsite() throws InterruptedException {
-		 
+		
 		WebDriverWait wait = new WebDriverWait(driver,5);
 		wait.until(ExpectedConditions.elementToBeClickable(Ap.contactus));
 		Assert.assertTrue(Ap.contactus.isDisplayed());	
+		wait.until(ExpectedConditions.elementToBeClickable(Ap.searchbar));
 		Ap.searchbar.sendKeys("hello");
 		Thread.sleep(3000);
 	}
@@ -44,5 +46,4 @@ public class googleTest {
 	public void teardown() {
 		driver.quit();
 	}
-
 }
