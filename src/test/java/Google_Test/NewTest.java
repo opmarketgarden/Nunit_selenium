@@ -25,7 +25,7 @@ public class NewTest extends RunnerTest {
 		wait.until(ExpectedConditions.elementToBeClickable(Ap.searchbar));
 		Ap.searchbar.sendKeys("hello");
 		Thread.sleep(3000);
-		//comment
+		
 	}
 	@Test
 	public void womenstab() {
